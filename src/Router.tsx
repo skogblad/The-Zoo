@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./pages/Layout/Layout";
 import { Home } from "./pages/Home";
-import { Animals } from "./pages/Animals";
+import { Animal } from "./pages/Animal";
+import { AnimalApp } from "./pages/AnimalApp";
+import { animalLoader } from "./loaders/animalLoader";
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +16,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/animals",
-        element: <Animals />
+        element: <AnimalApp />
       },
+      {
+        path: "/animal/:id",
+        loader: animalLoader,
+        element: <Animal />
+      }
     ],
   },
 ]);
