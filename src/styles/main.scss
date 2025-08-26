@@ -1,3 +1,5 @@
+@import "/src/styles/variables";
+
 * {
   box-sizing: border-box;
   color: black;
@@ -15,18 +17,20 @@
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #cbc4c4;
+  color: $darkGreen;
+  background-color: $lightGreen;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  color: $lightGreen;
+  background-color: $darkGreen;
 }
 button:focus,
 button:focus-visible {
@@ -40,5 +44,20 @@ a {
 
 a.active {
   font-weight: 900;
-  border-bottom: 2px solid #5b668c;
+  border-bottom: 2px solid $darkBlue;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
