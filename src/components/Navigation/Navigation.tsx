@@ -1,9 +1,11 @@
 import { NavLink } from "react-router"
+import styles from "./Navigation.module.scss"
 
 export const Navigation = () => {
   return (
     <>
-      <nav>
+      <nav className={styles.Navigation}>
+        <h1>ZooZoom</h1>
         <ul>
           <li>
             <NavLink to={"/"}>Hem</NavLink>

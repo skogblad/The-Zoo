@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { Navigation } from "../../components/Navigation";
+import { Navigation } from "../../components/Navigation/Navigation";
 import { Footer } from "../../components/Footer";
 
 export const Layout = () => {
