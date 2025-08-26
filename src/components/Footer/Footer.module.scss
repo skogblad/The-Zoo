@@ -1,0 +1,14 @@
+@import "/src/styles/variables";
+
+footer {
+  background-color: $lightBlue;
+  padding-block: 30px;
+
+  span {
+    margin-inline: 10px;
+    font-size: 1rem;
+  }
+}
+
+
+  
