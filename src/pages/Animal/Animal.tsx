@@ -4,11 +4,12 @@ import styles from "./Animal.module.scss";
 
 export const Animal = () => {
   const { animal } = useLoaderData<AnimalLoader>();
+  const placeholderUrl = "/zoozoom1.png";
 
   return (
     <article key={animal.id} className={styles.animal}>
       <h2>{animal.name}</h2>
-      <img src={animal.imageUrl} alt={animal.latinName} />
+      <img src={animal.imageUrl} alt={animal.latinName} onError={(e) => e.currentTarget.src = placeholderUrl}/>
       <p className={styles.about}>{animal.shortDescription} Född: {animal.yearOfBirth}</p>
       <p className={styles.medicine}>Medicin: {animal.medicine}</p>
       <button>Mata</button>

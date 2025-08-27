@@ -6,6 +6,7 @@ import styles from "./AnimalApp.module.scss";
 
 export const AnimalApp = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
+  const placeholderUrl = "/zoozoom1.png";
 
   useEffect(() => {
     const getData = async () => {
@@ -24,7 +25,7 @@ export const AnimalApp = () => {
           <article key={a.id} className={styles.animal}>
             <Link to={`/animal/${a.id}`}>
               <h3>{a.name}</h3>
-              <img src={a.imageUrl} alt={a.latinName} />
+              <img src={a.imageUrl} alt={a.latinName} onError={(e) => e.currentTarget.src = placeholderUrl}/>
             </Link>
           </article>
         ))}
