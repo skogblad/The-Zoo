@@ -42,7 +42,7 @@ export const Home = () => {
 
       <article className={styles.aboutContainer}>
         <h2>Upptäck vår lilla djurvärld på ZooZoom</h2>
-        <p>Hos oss zoomar du in på en värld full av gosiga katter, busiga kaniner och spännande småkryp som spindlar och vandrande pinnar. Kom nära djuren, lek, mata och upptäck deras små hemligheter – här finns roliga överraskningar för både stora och små på varje steg av äventyret!</p>
+        <p>Hos oss zoomar du in på en värld full av gosiga katter, busiga kaniner och spännande småkryp som spindlar och vandrande pinnar. Kom nära djuren, lek, mata och upptäck deras små hemligheter. Här finns roliga överraskningar för både stora och små på varje steg av äventyret!</p>
       </article>
 
       <article className={styles.feedContainer}>
