@@ -23,6 +23,30 @@
   .medicine {
     font-style: italic;
   }
+
+  .feedBtn {
+    margin-top: 5px;
+    &:disabled {
+      background-color: rgb(210, 210, 210);
+      color: grey;
+      cursor: not-allowed;
+    }
+  }
+
+  .lastFedText {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .hungryText {
+    display: block;
+    color: $darkBlue;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
   
   .theArt {
     background-color: $lightBeige;
@@ -57,6 +81,14 @@
     p {
       margin-inline: 160px;
       font-size: 1.2rem;
+    }
+
+    .lastFedText {
+      font-size: 1.1rem;
+    }
+
+    .hungryText {
+      font-size: 1rem;
     }
   }
 }
