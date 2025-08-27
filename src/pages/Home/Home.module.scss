@@ -1,0 +1,180 @@
+@import "/src/styles/variables";
+
+.imgContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  justify-items: center;
+}
+
+.pictures {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
+.aboutContainer {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-inline: 20px;
+    font-size: 1rem;
+  }
+}
+
+.feedContainer {
+  padding-block: 20px;
+  background-color: $lightBeige;
+  
+  h3 {
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
+
+.monthlyContainer {
+  margin-inline: 20px;
+  margin-block: 25px;
+  border: 2px solid rgb(236, 233, 230);
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 4px 4px 8px rgba(98, 97, 97, 0.5);
+
+  h3 {
+    font-size: 2rem;
+    font-family: "Fascinate", system-ui, sans-serif;
+    color: $darkBlue;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  button {
+    margin-block: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pictures {
+    img {
+      height: 200px;
+    }
+  }
+
+  .feedContainer {
+    margin-top: 30px;
+    
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .monthlyContainer {
+    margin: 40px;
+
+    img {
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pictures {
+    img {
+      height: 250px;
+    }
+  }
+
+  .aboutContainer {
+    text-align: left;
+    margin-inline: 50px;
+
+    h2 {
+      margin-left: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .feedContainer {
+    padding-block: 40px;
+
+    h3 {
+      font-size: 1.2rem;
+    }   
+  }
+
+  .monthlyContainer {
+    margin: 60px;
+
+    img {
+      height: 500px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .pictures {
+    img {
+      height: 350px;
+    }
+  }
+
+  .aboutContainer {
+    margin-inline: 90px;
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .feedContainer {
+    padding-block: 50px;
+
+    h3 {
+      font-size: 1.4rem;
+    }   
+  }
+
+  .monthlyContainer {
+    margin-inline: 120px;
+
+    img {
+      height: 700px;
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    button {
+      margin-block: 40px;
+    }
+  }
+}

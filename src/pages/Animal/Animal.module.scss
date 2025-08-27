@@ -1,0 +1,62 @@
+@import "/src/styles/variables";
+
+.animal {
+  img {
+    height: auto;
+    width: 60%;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid rgb(236, 233, 230);
+    box-shadow: 2px 2px 4px rgba(98, 97, 97, 0.5);
+  }
+
+  p {
+    margin-inline: 20px;
+    font-size: 1rem;
+  }
+
+  .about {
+    font-weight: 900;
+    color: $darkBlue;
+  }
+
+  .medicine {
+    font-style: italic;
+  }
+  
+  .theArt {
+    background-color: $lightBeige;
+    padding: 15px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .btnBack {
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .animal {
+    p {
+      margin-inline: 80px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .animal {
+    p {
+      margin-inline: 150px;
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .animal {
+    p {
+      margin-inline: 160px;
+      font-size: 1.2rem;
+    }
+  }
+}
