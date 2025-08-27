@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./pages/Layout/Layout";
-import { Home } from "./pages/Home";
-import { Animal } from "./pages/Animal";
-import { AnimalApp } from "./pages/AnimalApp";
+import { Home } from "./pages/Home/Home";
+import { Animal } from "./pages/Animal/Animal";
+import { AnimalApp } from "./pages/AnimalApp/AnimalApp";
 import { animalLoader } from "./loaders/animalLoader";
 
 export const router = createBrowserRouter([
