@@ -38,10 +38,18 @@ export const Animal = () => {
   return (
     <article key={animal.id} className={styles.animal}>
       <h2>{animal.name}</h2>
-      <img src={animal.imageUrl} alt={animal.latinName} onError={(e) => e.currentTarget.src = placeholderUrl}/>
+      <img 
+        src={animal.imageUrl} 
+        alt={animal.latinName} 
+        onError={(e) => e.currentTarget.src = placeholderUrl}
+      />
       <p className={styles.about}>{animal.shortDescription} Född: {animal.yearOfBirth}</p>
       <p className={styles.medicine}>Medicin: {animal.medicine}</p>
-      <button onClick={feed} disabled={btnDisabled()} className={styles.feedBtn}>Mata</button>
+      <button 
+        onClick={feed} 
+        disabled={btnDisabled()} 
+        className={styles.feedBtn}>Mata
+      </button>
       {whenLastFed && <p className={styles.lastFedText}>Senast matad: {whenLastFed.toLocaleString()}</p>}
       {hoursSinceFed >= 3 && <span className={styles.hungryText}>Psst! {animal.name} börjar bli hunrig, behöver snart matas</span>}
       <p className={styles.theArt}>Om arten: {animal.longDescription}</p>
