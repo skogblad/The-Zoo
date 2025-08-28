@@ -9,7 +9,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  background-color: $backgroundBlue;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,10 +28,12 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   color: $lightGreen;
   background-color: $darkGreen;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -47,7 +49,9 @@ a.active {
   border-bottom: 2px solid $darkBlue;
 }
 
-html, body, #root {
+html, 
+body, 
+#root {
   height: 100%;
   margin: 0;
 }

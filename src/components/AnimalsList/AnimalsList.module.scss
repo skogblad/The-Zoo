@@ -17,6 +17,7 @@ h2 {
   border-bottom-left-radius: 30px;
   box-shadow: 2px 2px 4px rgba(98, 97, 97, 0.5);
   margin-bottom: 25px;
+  background-color: white;
 
   &:hover {
     transform: scale(1.1);
@@ -36,6 +37,22 @@ h2 {
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
   }
+
+  .hungry,
+  .gettingHungry,
+  .notHungry {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  .hungry {
+    color: $darkBeige;
+    font-weight: 700;
+  }
+
+  .gettingHungry {
+    color: $darkBlue;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -48,6 +65,12 @@ h2 {
   .animal {
     img {
       height: 250px;
+    }
+
+    .hungry,
+    .gettingHungry,
+    .notHungry {
+      font-size: 0.9rem;
     }
   }
 }
@@ -75,6 +98,12 @@ h2 {
 
     img {
       height: 300px;
+    }
+
+    .hungry,
+    .gettingHungry,
+    .notHungry {
+      font-size: 1rem;
     }
   }
 }
