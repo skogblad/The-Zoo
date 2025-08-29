@@ -1,0 +1,35 @@
+h2 {
+  font-size: 1.5rem;
+}
+
+.animalsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .animalsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .animalsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .animalsGrid {
+    margin: 30px;
+  }
+}

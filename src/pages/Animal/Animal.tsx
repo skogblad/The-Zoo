@@ -1,11 +1,10 @@
-import { Link, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 import type { AnimalLoader } from "../../loaders/animalLoader";
-import styles from "./Animal.module.scss";
 import { useState } from "react";
+import { AnimalPresentation } from "../../components/AnimalPresentation/AnimalPresentation";
 
 export const Animal = () => {
   const { animal } = useLoaderData<AnimalLoader>();
-  const placeholderUrl = "/zoozoom1.png";
 
   const [whenLastFed, setWhenLastFed] = useState<Date | null>(() => {
     const saved = localStorage.getItem(`lastFed-${animal.id}`);
@@ -36,26 +35,12 @@ export const Animal = () => {
   const hoursSinceFed = whenLastFed ? (new Date().getTime() - whenLastFed.getTime()) / (1000 * 60 * 60) : 0;
 
   return (
-    <article key={animal.id} className={styles.animal}>
-      <h2>{animal.name}</h2>
-      <img 
-        src={animal.imageUrl} 
-        alt={animal.latinName} 
-        onError={(e) => e.currentTarget.src = placeholderUrl}
-      />
-      <p className={styles.about}>{animal.shortDescription} Född: {animal.yearOfBirth}</p>
-      <p className={styles.medicine}>Medicin: {animal.medicine}</p>
-      <button 
-        onClick={feed} 
-        disabled={btnDisabled()} 
-        className={styles.feedBtn}>Mata
-      </button>
-      {whenLastFed && <p className={styles.lastFedText}>Senast matad: {whenLastFed.toLocaleString()}</p>}
-      {hoursSinceFed >= 3 && <span className={styles.hungryText}>Psst! {animal.name} börjar bli hunrig, behöver snart matas</span>}
-      <p className={styles.theArt}>Om arten: {animal.longDescription}</p>
-      <Link to={`/animals`}>
-        <button className={styles.btnBack}>Tillbaka</button>
-      </Link>
-    </article>
+    <AnimalPresentation 
+      animal={animal}
+      whenLastFed={whenLastFed}
+      hoursSinceFed={hoursSinceFed}
+      feed={feed}
+      btnDisabled={btnDisabled()}
+    />
   );
 }
