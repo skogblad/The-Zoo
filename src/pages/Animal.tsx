@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router";
-import type { AnimalLoader } from "../../loaders/animalLoader";
+import type { AnimalLoader } from "../loaders/animalLoader";
 import { useState } from "react";
-import { AnimalPresentation } from "../../components/AnimalPresentation/AnimalPresentation";
+import { AnimalPresentation } from "../components/AnimalPresentation/AnimalPresentation";
 
 export const Animal = () => {
   const { animal } = useLoaderData<AnimalLoader>();

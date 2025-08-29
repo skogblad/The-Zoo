@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getAnimalById } from "../../services/animalService";
-import type { IAnimal } from "../../models/IAnimal";
-import { HomePresentation } from "../../components/HomePresentation/HomePresentation";
+import { getAnimalById } from "../services/animalService";
+import type { IAnimal } from "../models/IAnimal";
+import { HomePresentation } from "../components/HomePresentation/HomePresentation";
 
 export const Home = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
