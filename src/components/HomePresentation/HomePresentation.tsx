@@ -4,10 +4,13 @@ import type { IAnimal } from "../../models/IAnimal";
 
 interface HomePresentationProps {
   animals: IAnimal[];
-  monthlyAnimal: IAnimal | null;
+  monthlyAnimals: {
+    niceAnimal: IAnimal | null;
+    badAnimal: IAnimal | null;
+  }
 }
 
-export const HomePresentation = ({ animals, monthlyAnimal }: HomePresentationProps) => {
+export const HomePresentation = ({ animals, monthlyAnimals }: HomePresentationProps) => {
   
   return (
     <>
@@ -31,18 +34,33 @@ export const HomePresentation = ({ animals, monthlyAnimal }: HomePresentationPro
         </Link>
       </article>
 
-      <article className={styles.monthlyContainer}>
-        <h3>Månadens gull</h3>
-        {monthlyAnimal && (
-          <>
-            <p>Säg hej till {monthlyAnimal.name}, vår egna minigris!</p>
-            <img src={monthlyAnimal.imageUrl} alt={monthlyAnimal.latinName} />
-          </>
-        )}
-        <Link to={`/animal/${monthlyAnimal?.id}`}>
-          <button>Läs mer</button>
-        </Link>
-      </article>
+      <section className={styles.monthlyContainer}>
+        <article className={styles.monthlyAnimal}>
+          <h3>Månadens gull</h3>
+          {monthlyAnimals.niceAnimal && (
+            <>
+              <p>Säg hej till {monthlyAnimals.niceAnimal.name}, vår egna minigris!</p>
+              <img src={monthlyAnimals.niceAnimal.imageUrl} alt={monthlyAnimals.niceAnimal.latinName} />
+            </>
+          )}
+          <Link to={`/animal/${monthlyAnimals.niceAnimal?.id}`}>
+            <button>Läs mer</button>
+          </Link>
+        </article>
+        
+        <article className={styles.monthlyAnimal}>
+          <h3>Månadens bus</h3>
+          {monthlyAnimals.badAnimal && (
+            <>
+              <p>Se upp för {monthlyAnimals.badAnimal.name}, vår busiga kameleont!</p>
+              <img src={monthlyAnimals.badAnimal.imageUrl} alt={monthlyAnimals.badAnimal.latinName} />
+            </>
+          )}
+          <Link to={`/animal/${monthlyAnimals.badAnimal?.id}`}>
+            <button>Läs mer</button>
+          </Link>
+        </article>
+      </section>
     </>
   )
 }

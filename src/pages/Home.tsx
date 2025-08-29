@@ -5,7 +5,7 @@ import { HomePresentation } from "../components/HomePresentation/HomePresentatio
 
 export const Home = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
-  const [monthlyAnimal, setMonthlyAnimal] = useState<IAnimal | null>(null)
+  const [monthlyAnimals, setMonthlyAnimals] = useState<{niceAnimal: IAnimal | null, badAnimal: IAnimal | null}>({niceAnimal: null, badAnimal: null})
 
   useEffect(() => {
     const getData = async () => {
@@ -20,16 +20,17 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
-    const getMonthlyAnimal = async () => {
-      const animal = await getAnimalById(6);
+    const getMonthlyAnimals = async () => {
+      const niceAnimal = await getAnimalById(6);
+      const badAnimal = await getAnimalById(10);
 
-      setMonthlyAnimal(animal);
+      setMonthlyAnimals({niceAnimal, badAnimal});
     }
 
-    getMonthlyAnimal();
+    getMonthlyAnimals();
   })
   
   return (
-    <HomePresentation animals={animals} monthlyAnimal={monthlyAnimal}/>
+    <HomePresentation animals={animals} monthlyAnimals={monthlyAnimals}/>
   )
 }

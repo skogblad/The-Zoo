@@ -39,35 +39,37 @@
 }
 
 .monthlyContainer {
-  margin-inline: 20px;
-  margin-block: 25px;
-  border: 2px solid rgb(236, 233, 230);
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  box-shadow: 4px 4px 8px rgba(98, 97, 97, 0.5);
-  background-color: white;
+  .monthlyAnimal {
+    margin-inline: 20px;
+    margin-block: 25px;
+    border: 2px solid rgb(236, 233, 230);
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 4px 4px 8px rgba(98, 97, 97, 0.5);
+    background-color: white;
 
-  h3 {
-    font-size: 2rem;
-    font-family: "Fascinate", system-ui, sans-serif;
-    color: $darkBlue;
-    margin: 0;
-    margin-top: 10px;
-  }
+    h3 {
+      font-size: 2rem;
+      font-family: "Fascinate", system-ui, sans-serif;
+      color: $darkBlue;
+      margin: 0;
+      margin-top: 10px;
+    }
 
-  p {
-    font-size: 1rem;
-  }
+    p {
+      font-size: 1rem;
+    }
 
-  img {
-    display: block;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
+    img {
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
 
-  button {
-    margin-block: 20px;
+    button {
+      margin-block: 20px;
+    }
   }
 }
 
@@ -87,10 +89,14 @@
   }
 
   .monthlyContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin: 40px;
 
-    img {
-      height: 400px;
+    .monthlyAnimal {
+      img {
+        height: 230px;
+      }
     }
   }
 }
@@ -126,12 +132,14 @@
   .monthlyContainer {
     margin: 60px;
 
-    img {
-      height: 500px;
-    }
+    .monthlyAnimal {
+      img {
+        height: 300px;
+      }
 
-    p {
-      font-size: 1.1rem;
+      p {
+        font-size: 1.1rem;
+      }
     }
   }
 }
@@ -162,20 +170,22 @@
   .monthlyContainer {
     margin-inline: 120px;
 
-    img {
-      height: 700px;
-    }
+    .monthlyAnimal {
+      img {
+        height: 400px;
+      }
 
-    h3 {
-      font-size: 3rem;
-    }
+      h3 {
+        font-size: 3rem;
+      }
 
-    p {
-      font-size: 1.2rem;
-    }
+      p {
+        font-size: 1.2rem;
+      }
 
-    button {
-      margin-block: 40px;
+      button {
+        margin-block: 40px;
+      }
     }
   }
 }
