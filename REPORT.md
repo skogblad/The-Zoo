@@ -71,7 +71,7 @@ Ha roligt, skratta och lär er massor!
 
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Koden uppfyller samtliga krav för VG. Det finns en router implementerad med olika koncept såsom layouts, child-routes och error-element. Översiktssidan för djuren fungerar, och det går att mata djuren samt hantera tiden korrekt. Felaktiga bildlänkar hanteras, och SCSS används för styling vilket uppfyller kravet för att använda någon annan teknik än ren CSS. Context och reducer används för djurhantering, och matning nollställs vid rätt förhållanden. Djurs status visas diskret och subtila animationer finns närvarande vid interaktioner.
+📌 **Motivering:** Projektet uppfyller alla krav för både G och VG. Här används en router med layout och child-routes för att navigera mellan olika sidor, samt användning av tjänster för datahämtning och hantering av bilder med fallback. Context och reducers används för hantering av tillstånd och matningslogik. Det finns subtila animeringar, och bilder hanteras korrekt. Dessutom används SCSS för styling.
 
 💡 **Förbättringsförslag:**  
-Inga större förbättringar behövs.
+Koden skulle kunna förbättras med fler kommentarer för att öka läsbarheten och underlätta för framtida utveckling och underhåll. Dessutom kan man överväga att bryta ut vissa funktioner, som `feedStatus`, till egna moduler om kodbasen växer, för att hålla komponenterna så rena som möjligt.
