@@ -1,64 +1,54 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wHj4KLdN)
-# The Zoo
+# ZooZoom
 
-I denna inlämningsuppgift kommer ni att bygga ett zoo. Zoo:t har ett antal djur som kommer behöva matas. 
+ZooZoom is an interactive web application built in React that allows users to explore a virtual zoo. Users can view a homepage with featured animals, browse a list of all animals, and see detailed information about each animal. Each animal has a feeding schedule that users can interact with, with visual indicators showing whether the animal is hungry, getting hungry, or satisfied.
+All animal data is fetched from a public API: https://animals.azurewebsites.net/api/animals
 
-Er uppgift kommer att göra en startsida till zoo:t. Denna bör vara väl genomtänkt grafiskt, ha en tydlig uppgyggnad
-och använda sig av så många css-tekniker ni har lärt er som möjligt. 
+## Features
 
-På startsidan skall det någonstans finnas en länk till en djur-sida där besökare kan se vilka djur som finns och en
-kort beskrivning av varje djur tillsammans med en bild. Tyvärr har några av djurens bilder blivit fel och dessa behöver
-ni hantera på ett bra sätt. 
+**1. Homepage** – Explore featured animals and navigate to the full animal list.
 
-När en användare klickar på ett djur kommer användaren till en djur-sida där bara ett djur presenteras. Här kommer det
-finnas mer information om djuret än det fanns på översiktssidan. Presentationen bör fortfarande hanteras på ett bra sätt
-genom olika css-tekniker som ni har lärt er. 
+**2. Animal List** – Browse all animals, see their status, and click to view details.
 
-På djursidan kommer det att finnas en knapp för att mata ett djur. Följande regler gäller för matningen av ett djur:
+**3. Animal Detail Page** – Read full details, see feeding status, and feed animals following the rules.
 
-- Om ett djur inte har fått mat på fyra timmar skall knappen Mata gå att klicka på.
-- Om ett djur har fått mat inom fyra timmar skall knappen vara oklickbar.
-- När ett djur inte har fått mat på tre timmar skall en indikation på att djuret snart behöver matas visas.
+## Feeding Rules
 
-På översiktssidan för djuren skall det också vara synligt om ett djur är mätt, hungrigt eller i desperat behov av mat. 
-Men på denna översiktssida är tiderna lite annorlunda än för detaljsidan. Här gäller
+| Context     | Hours Since Last Feeding | Indicator / Button                        |
+| ----------- | ------------------------ | ----------------------------------------- |
+| Detail Page | < 3 hours                | Button disabled, animal satisfied         |
+| Detail Page | 3–4 hours                | Button disabled, “getting hungry” warning |
+| Detail Page | ≥ 4 hours                | Button enabled                            |
+| List Page   | < 3 hours                | Animal satisfied                          |
+| List Page   | 3–5 hours                | “Getting hungry” warning                  |
+| List Page   | ≥ 5 hours                | “Needs feeding” indicator                 |
 
-- Om ett djur inte fått mat på tre timmar skall det visas en varning om att djuret snart behöver mat. 
-- Om ett djur inte har fått mat på fem timmar skall det visas en notis om att nu behöver djuret matas. 
+## Tech
 
-Exakt hur ni löser detta kommer att vara upp till er. Men, stäm av er lösning med mig så att jag kan komma med
-förslag eller idéer om hur ni skulle kunna göra den annorlunda vid behov. 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-Djuren finns på följande url: https://animals.azurewebsites.net/api/animals
+![ReactRouter](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-## Betygskriterier
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-### Betyg G
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-- Ni skall använda en router för att visa olika sidor i er applikation. 
-- I er routerlösning skall ni kunna använda olika koncept såsom layouts, child-routes och error-element korrekt.
-- Ni behöver visa en översiktssida för djuren där det går att klicka på ett djur. 
-- Ni skall kunna mata ett djur på djur-detaljsidan och spara tiden när djuret matades. 
-- Ni hanterar trasiga bild-länkar korrekt.
-- Ni behöver använda någon annan teknik än ren css för styling i denna uppgift. Det kan vara tailwind, scss, material ui eller någonting annat. 
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-### Betyg VG
+## Screenshot
 
-- Samtliga krav från betyg G skall vara uppfyllda. 
-- Ni behöver välja att antingen hämta data med hjälp av begreppet tjänster eller en custom hook. 
-- Ni behöver använda er av context istället för props för att kommunicera mellan komponenter. 
-- Ni behöver använda er av reducers istället för state för hanteringen av djur. 
-- När ni har matat ett djur och kommer tillbaka till djur-sidan skall eventuellt matningen nollställas, om rätt villkor angående tiderna här ovan stämmer. 
-- På översiktsidan skall djurens status presenteras på ett diskret sätt beroende på tiderna beskriva här ovan. 
-- Ni använder er av subtila animeringar vid klick på knappar, eventuellt sidladdningar och route-förändringar samt där ni känner att det behövs
+#### Front page:
 
-## Övrigt
+![front_page](/zoozoom.jpg)
 
-Kom ihåg att stämma av de idéer ni har med mig innan ni börjar koda. Ofta finns det någonting som behöver itereras några gånger och det är bra att göra
-detta innan ni kommer för långt i er tänkta lösning. 
+<details>
+<summary><strong>See more</strong> <i>(2 images)</i></summary>
 
-Rita gärna upp er lösning så ni enklare förstår hur ni skall dela upp era komponenter och förstå hur kommunikationen mellan komponenter sker.
+##### All animals page:
 
-Välj en teknik gällande css som ni antingen vill lära er mer om eller som ni tycker är rolig och håll er till ert val genom projektet, även om det verkar som att saker inte fungerar som ni vill. Det kan vi lösa tillsammans. 
+![animal_list_page](/zoozoom_list.jpg)
 
-Ha roligt, skratta och lär er massor!
+#### Detailed page:
+
+![detail_page](/zoozoom_detail.jpg)
+
+</details>
