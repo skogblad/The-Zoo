@@ -1,6 +1,7 @@
 import styles from "./HomePresentation.module.scss";
 import { Link } from "react-router-dom";
 import type { IAnimal } from "../../models/IAnimal";
+import { useState } from "react";
 
 interface HomePresentationProps {
   animals: IAnimal[];
@@ -11,13 +12,25 @@ interface HomePresentationProps {
 }
 
 export const HomePresentation = ({ animals, monthlyAnimals }: HomePresentationProps) => {
-  
+  const [loadedImages, setLoadedImages] = useState(0);
+
+  const totalImages = animals.length + 
+  (monthlyAnimals.niceAnimal ? 1 : 0) + 
+  (monthlyAnimals.badAnimal ? 1 : 0);
+
+  const handleImageLoad = () => {
+    setLoadedImages(prev => prev + 1);
+  }
+
+  const isLoading = loadedImages < totalImages;
+
   return (
     <>
       <div className={styles.imgContainer}>
         {animals.map((a) => (
           <div key={a.id} className={styles.pictures}>
-            <img src={a.imageUrl} alt={a.latinName} />
+            {isLoading && <div className={styles.skeleton}></div>}
+            <img src={a.imageUrl} alt={a.latinName} onLoad={handleImageLoad} className={isLoading ? styles.hidden : ""} />
           </div>
         ))}
       </div>
@@ -40,7 +53,10 @@ export const HomePresentation = ({ animals, monthlyAnimals }: HomePresentationPr
           {monthlyAnimals.niceAnimal && (
             <>
               <p>Säg hej till {monthlyAnimals.niceAnimal.name}, vår egna minigris!</p>
-              <img src={monthlyAnimals.niceAnimal.imageUrl} alt={monthlyAnimals.niceAnimal.latinName} />
+              <div className={styles.pictures}>
+                {isLoading && <div className={styles.skeleton}></div>}
+                <img src={monthlyAnimals.niceAnimal.imageUrl} alt={monthlyAnimals.niceAnimal.latinName} loading="lazy" onLoad={handleImageLoad} className={isLoading ? styles.hidden : ""}/>
+              </div>
             </>
           )}
           <Link to={`/animal/${monthlyAnimals.niceAnimal?.id}`}>
@@ -53,7 +69,10 @@ export const HomePresentation = ({ animals, monthlyAnimals }: HomePresentationPr
           {monthlyAnimals.badAnimal && (
             <>
               <p>Se upp för {monthlyAnimals.badAnimal.name}, vår busiga kameleont!</p>
-              <img src={monthlyAnimals.badAnimal.imageUrl} alt={monthlyAnimals.badAnimal.latinName} />
+              <div className={styles.pictures}>
+                {isLoading && <div className={styles.skeleton}></div>}
+                <img src={monthlyAnimals.badAnimal.imageUrl} alt={monthlyAnimals.badAnimal.latinName} loading="lazy" onLoad={handleImageLoad} className={isLoading ? styles.hidden : ""}/>
+              </div>
             </>
           )}
           <Link to={`/animal/${monthlyAnimals.badAnimal?.id}`}>

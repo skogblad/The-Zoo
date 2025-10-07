@@ -63,6 +63,28 @@
   .btnBack {
     margin-bottom: 70px;
   }
+
+  .hidden {
+    display: none;
+  }
+
+  .skeleton {
+    width: 60%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid rgb(236, 233, 230);
+    box-shadow: 2px 2px 4px rgba(98, 97, 97, 0.5);
+    background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
 }
 
 @media screen and (min-width: 768px) {

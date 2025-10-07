@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import styles from "./AnimalListPresentation.module.scss"
 import type { IAnimal } from "../../models/IAnimal";
+import { useState } from "react";
 
 interface AnimalListPresentationProps {
   animal: IAnimal;
@@ -8,6 +9,7 @@ interface AnimalListPresentationProps {
 
 export const AnimalListPresentation = ({ animal }: AnimalListPresentationProps) => {
   const placeholderUrl = "/zoozoom1.png";
+  const [isLoaded, setIsLoaded] = useState(false);
   
   const feedStatus = (id: number, lastFed: string | null) => {
     const saved = localStorage.getItem(`lastFed-${id}`)
@@ -35,10 +37,14 @@ export const AnimalListPresentation = ({ animal }: AnimalListPresentationProps) 
       <article key={animal.id} className={styles.animal}>
         <Link to={`/animal/${animal.id}`}>
           <h3>{animal.name}</h3>
+
+          {!isLoaded && <div className={styles.skeleton}></div>}
           <img 
             src={animal.imageUrl} 
-            alt={animal.latinName} 
+            alt={animal.latinName}
+            onLoad={() => setIsLoaded(true)} 
             onError={(e) => e.currentTarget.src = placeholderUrl}
+            className={!isLoaded ? styles.hidden : ""}
           />
           {status.text && (
             <p className={styles[status.className]}>
