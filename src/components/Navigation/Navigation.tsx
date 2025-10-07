@@ -1,11 +1,14 @@
-import { NavLink } from "react-router"
+import { Link, NavLink } from "react-router"
 import styles from "./Navigation.module.scss"
 
 export const Navigation = () => {
   return (
     <>
       <nav className={styles.Navigation}>
-        <h1>ZooZoom</h1>
+        <Link to={"/"}>
+          <h1>ZooZoom</h1>
+        </Link>
+        
         <ul>
           <li>
             <NavLink to={"/"}>Hem</NavLink>
