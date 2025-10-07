@@ -1,6 +1,6 @@
 # ZooZoom
 
-ZooZoom is an interactive web application built in React that allows users to explore a virtual zoo. Users can view a homepage with featured animals, browse a list of all animals, and see detailed information about each animal. Each animal has a feeding schedule that users can interact with, with visual indicators showing whether the animal is hungry, getting hungry, or satisfied.
+ZooZoom is an interactive web application built in React that allows users to explore a virtual zoo. Users can view a homepage with featured animals, browse a list of all animals, and see detailed information about each animal. Each animal has a feeding schedule that users can interact with, with visual indicators showing whether the animal is hungry, getting hungry, or satisfied. All feeding times are saved in local storage, allowing the app to keep track of each animal's last feeding.
 All animal data is fetched from a public API: https://animals.azurewebsites.net/api/animals
 
 ## Features
