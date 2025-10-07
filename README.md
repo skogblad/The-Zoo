@@ -38,17 +38,17 @@ All animal data is fetched from a public API: https://animals.azurewebsites.net/
 
 #### Front page:
 
-![front_page](/zoozoom.jpg)
+![front_page](/src/assets/zoozoom.jpg)
 
 <details>
 <summary><strong>See more</strong> <i>(2 images)</i></summary>
 
 ##### All animals page:
 
-![animal_list_page](/zoozoom_list.jpg)
+![animal_list_page](/src/assets/zoozoom_list.jpg)
 
 #### Detailed page:
 
-![detail_page](/zoozoom_detail.jpg)
+![detail_page](/src/assets/zoozoom_detail.jpg)
 
 </details>
